@@ -8,7 +8,8 @@ import LoginForm from './pages/LoginForm';
 import AdminDashboard from './pages/AdminDashboard';
 import StudentDashboard from './pages/StudentDashboard';
 import UserDashboard from './pages/DonorDashboard';
-
+import About from './pages/About';
+import Donate from "./pages/Donate";
 // Header always visible
 import Header from './components/Header';
 
@@ -26,6 +27,8 @@ export default function App() {
           <Route path="/admin-dashboard" element={<AdminDashboard />} />
           <Route path="/student-dashboard" element={<StudentDashboard />} />
           <Route path="/user-dashboard" element={<UserDashboard />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/donate" element={<Donate />} />
         </Routes>
       </div>
     </Router>
