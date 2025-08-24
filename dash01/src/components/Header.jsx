@@ -1,17 +1,18 @@
 export default function Header() {
   return (
-    <header className="fixed top-0 left-0 w-full z-50 bg-black text-white shadow-md px-8 py-4 flex justify-between items-center">
-      <div className="font-bold text-2xl">DonorConnect</div>
+    <header className="fixed top-0 left-0 w-full z-50 bg-teal-700 text-white shadow-md px-8 py-4 flex justify-between items-center font-poppins">
+      <div className="font-bold text-2xl text-amber-400">DonorConnect</div>
       <nav>
         <ul className="flex gap-6">
-          <li><a href="/" className="hover:underline">Home</a></li>
-          <li><a href="/about" className="hover:underline">About</a></li>
-          <li><a href="/students" className="hover:underline">Students</a></li>
-          <li><a href="/donate" className="hover:underline">Donate</a></li>
-          <li><a href="/contact" className="hover:underline">Contact</a></li>
-          <li><a href="/login" className="hover:underline">Login/Register</a></li>
+          <li><a href="/" className=" text-white hover:text-amber-300 transition-colors">Home</a></li>
+          <li><a href="/about" className=" text-white hover:text-amber-300 transition-colors">About</a></li>
+          <li><a href="/students" className=" text-white hover:text-amber-300 transition-colors">Students</a></li>
+          <li><a href="/donate" className=" text-white hover:text-amber-300 transition-colors">Donate</a></li>
+          <li><a href="/contact" className=" text-white hover:text-amber-300 transition-colors">Contact</a></li>
+          <li><a href="/login" className=" text-white hover:text-amber-300 transition-colors">Login/Register</a></li>
         </ul>
       </nav>
     </header>
   );
 }
+
