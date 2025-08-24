@@ -46,7 +46,7 @@ export default function Home() {
         </div>
         <div className="flex-1 flex justify-center md:justify-end mt-12 md:mt-0">
           <img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTqWWL_juS98qG7CLlQ4VoyDKdAnwRiPyUDQ&s"
+            src="https://katalystindia.org/wp-content/uploads/2022/08/Our-Story-Banner.jpg"
             alt="Students"
             className="w-full max-w-md rounded-3xl shadow-2xl"
           />
@@ -140,7 +140,7 @@ export default function Home() {
         {/* Left Side - Image */}
         <div className="w-full">
           <img
-            src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdk3V0CG2n11xCcFz5lUqHRFIwhta-CZNPZA&s"
             alt="Our Story"
             className="rounded-2xl shadow-lg"
           />
