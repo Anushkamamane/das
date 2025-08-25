@@ -67,7 +67,7 @@ export default function LoginForm() {
       {/* Page Hero */}
       <section className="w-full bg-gradient-to-r from-teal-100 to-teal-200 py-12 text-center shadow-inner">
         <h1 className="text-4xl md:text-5xl font-bold text-teal-900 capitalize">
-          {role} {type ? `(${type})` : ''} Login
+          {role} {type ? `${type}` : ''} Login
         </h1>
         <p className="mt-3 text-lg text-teal-700">
           Securely login to continue your journey
