@@ -8,7 +8,7 @@ export default function Header() {
           NGO Portal
         </Link>
         <div className="flex gap-6 text-white font-medium">
-           <Link to="/home" className="hover:text-teal-400">Home</Link>
+           <Link to="/" className="hover:text-teal-400">Home</Link>
           <Link to="/about" className="hover:text-teal-400">About</Link>
           <Link to="/students" className="hover:text-teal-400">Students</Link>
           <Link to="/donors" className="hover:text-teal-400">Donors</Link>
