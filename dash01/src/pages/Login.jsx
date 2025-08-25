@@ -15,9 +15,8 @@ export default function Login() {
       alert('Please select a role');
       return;
     }
-    if (role === 'admin') navigate('/admin-dashboard');
-    else if (role === 'student') navigate('/student-dashboard');
-    else if (role === 'user') navigate('/user-dashboard');
+    if (role === 'receiver') navigate('/receiver-dashboard');
+    else if (role === 'donor') navigate('/donor-dashboard');
     else alert('Invalid role');
   };
 
@@ -40,9 +39,8 @@ export default function Login() {
                 required
               >
                 <option value="">--Choose Role--</option>
-                <option value="admin">Admin</option>
-                <option value="student">Student</option>
-                <option value="user">User</option>
+                <option value="donor">Donor</option>
+                <option value="receiver">Receiver</option>
               </select>
             </div>
             <div>
@@ -83,9 +81,9 @@ export default function Login() {
 
           <p className="mt-6 text-center text-gray-700">
             Don't have an account?{' '}
-            <a href="#" className="text-teal-600 font-medium hover:underline">
+            <button type="button" className="text-teal-600 font-medium hover:underline bg-transparent border-none p-0 cursor-pointer">
               Register here
-            </a>
+            </button>
           </p>
         </div>
       </main>

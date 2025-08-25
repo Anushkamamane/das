@@ -37,12 +37,20 @@ export default function Home() {
           <p className="text-xl md:text-2xl text-teal-700 max-w-xl">
             Connect donors with students in need of educational funding. Make a difference today!
           </p>
-          <a
-            href="/donate"
-            className="bg-teal-600 hover:bg-teal-700 text-white font-semibold px-8 py-4 rounded-xl shadow-lg transition-transform transform hover:scale-105 w-max"
-          >
-            Donate Now
-          </a>
+          <div className="flex gap-4">
+            <a
+              href="/donate"
+              className="bg-teal-600 hover:bg-teal-700 text-white font-semibold px-8 py-4 rounded-xl shadow-lg transition-transform transform hover:scale-105 w-max"
+            >
+              Donate Now
+            </a>
+            <a
+              href="/donate"
+              className="bg-pink-600 hover:bg-pink-700 text-white font-semibold px-8 py-4 rounded-xl shadow-lg transition-transform transform hover:scale-105 w-max"
+            >
+              Receive Now
+            </a>
+          </div>
         </div>
         <div className="flex-1 flex justify-center md:justify-end mt-12 md:mt-0">
           <img
