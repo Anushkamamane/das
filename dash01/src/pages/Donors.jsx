@@ -7,8 +7,8 @@ const categories = {
 
 export default function Donate() {
   const [donors, setDonors] = useState([
-    { name: "Shiva tekale", amount: 500 },
-    { name: "Tanmay Kalikar", amount: 1000 },
+    { name: "Ananya Singh", Need: "Bag"},
+    { name: "Rohan Mehta", Need: "pen" },
   ]);
 
   const [name, setName] = useState("");

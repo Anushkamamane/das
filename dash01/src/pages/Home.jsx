@@ -32,7 +32,7 @@ export default function Home() {
       <section className="flex flex-col md:flex-row items-center justify-between w-full bg-gradient-to-r from-[#FFEDD5] to-[#FFE5B4] py-20 px-8 md:px-16">
         <div className="flex-1 flex flex-col space-y-6 text-left animate-fadeIn">
           <h1 className="text-5xl md:text-6xl font-bold text-[#1F4E79] leading-tight">
-            Empower Students, Change Lives
+            Empower NEEDY, Change Lives
           </h1>
           <p className="text-xl md:text-2xl text-gray-700 max-w-xl">
             Connect donors with students in need of educational funding. Make a difference today!

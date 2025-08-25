@@ -2,9 +2,9 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 
 const students = [
-  { name: "Anaya Singh", need: "$200" },
-  { name: "Rohan Mehta", need: "$300" },
-  { name: "Sara Khan", need: "$150" }
+  { name: "Anaya Singh", need: "Bag" },
+  { name: "Rohan Mehta", need: "Pen" },
+  { name: "Sara Khan", need: "Bag" }
 ];
 
 export default function DonorDashboard() {

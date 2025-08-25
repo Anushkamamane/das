@@ -3,9 +3,9 @@ import { BookOpen, DollarSign, Clock, CheckCircle } from "lucide-react";
 
 // Dummy applications data
 const applications = [
-  { id: 1, title: "Laptop for Computer Science", amount: "$800", status: "Approved", date: "2025-01-15" },
-  { id: 2, title: "Textbooks for Semester", amount: "$200", status: "Pending", date: "2025-01-20" },
-  { id: 3, title: "Lab Equipment Fee", amount: "$150", status: "Under Review", date: "2025-01-18" }
+  { id: 1, title: "Laptop for Computer Science", Donor: "Ramesh Kumar", status: "Approved", date: "2025-01-15" },
+  { id: 2, title: "Textbooks for Semester", Donor: "Priya sharma", status: "Pending", date: "2025-01-20" },
+  
 ];
 
 // Stats cards
@@ -100,7 +100,7 @@ export default function StudentDashboard() {
                 <thead className="bg-gray-50">
                   <tr>
                     <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Request</th>
-                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Amount</th>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Donor</th>
                     <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Date</th>
                     <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
                   </tr>
@@ -109,7 +109,7 @@ export default function StudentDashboard() {
                   {applications.map((app) => (
                     <tr key={app.id} className="hover:bg-gray-50 cursor-pointer">
                       <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{app.title}</td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm font-semibold text-emerald-600">{app.amount}</td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm font-semibold text-emerald-600">{app.Donor}</td>
                       <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-600">{app.date}</td>
                       <td className="px-6 py-4 whitespace-nowrap">
                         <span
