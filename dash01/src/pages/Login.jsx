@@ -41,8 +41,8 @@ export default function Login() {
               >
                 <option value="">--Choose Role--</option>
                 <option value="admin">Admin</option>
-                <option value="student">Student</option>
-                <option value="user">User</option>
+                <option value="student">receiver</option>
+                <option value="user">Donor</option>
               </select>
             </div>
             <div>

@@ -29,8 +29,7 @@ export default function App() {
           <Route path="/about" element={<About />} />
           <Route path="/donate" element={<Donate />} />
           <Route
-            path="*"
-            element={<h1 className="text-center text-2xl mt-20">404 - Page Not Found</h1>}
+            
           />
         </Route>
       </Routes>
