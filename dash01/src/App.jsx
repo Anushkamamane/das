@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import MainLayout from "./layouts/MainLayout";
 
-// Pag
+// Pages
 import ChooseLogin from "./pages/ChooseLogin";
 import LoginForm from "./pages/LoginForm";
 import AdminDashboard from "./pages/AdminDashboard";
@@ -20,17 +20,26 @@ export default function App() {
         <Route element={<MainLayout />}>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<ChooseLogin />} />
+          {/* Role-based login/register form */}
           <Route path="/login/:role" element={<LoginForm />} />
+
+          {/* Dashboards */}
           <Route path="/admin-dashboard" element={<AdminDashboard />} />
           <Route path="/student-dashboard" element={<StudentDashboard />} />
           <Route path="/donor-dashboard" element={<DonorDashboard />} />
+
+          {/* Other pages */}
           <Route path="/students" element={<Students />} />
           <Route path="/donors" element={<Donors />} />
           <Route path="/about" element={<About />} />
           <Route path="/donate" element={<Donate />} />
+
+          {/* Fallback 404 */}
           <Route
             path="*"
-            element={<h1 className="text-center text-2xl mt-20">404 - Page Not Found</h1>}
+            element={
+              <h1 className="text-center text-2xl mt-20">404 - Page Not Found</h1>
+            }
           />
         </Route>
       </Routes>
