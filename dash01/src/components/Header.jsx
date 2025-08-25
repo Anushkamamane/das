@@ -10,9 +10,9 @@ export default function Header() {
         <div className="flex gap-6 text-white font-medium">
            <Link to="/" className="hover:text-teal-400">Home</Link>
           <Link to="/about" className="hover:text-teal-400">About</Link>
-          <Link to="/students" className="hover:text-teal-400">Recievers</Link>
+          <Link to="/student-dashboard" className="hover:text-teal-400">Recievers</Link>
           <Link to="/donors" className="hover:text-teal-400">Donors</Link>
-          <Link to="/donate" className="hover:text-teal-400">Donate</Link>
+          
           <Link to="/login" className="hover:text-teal-400">Login</Link>
         </div>
       </nav>

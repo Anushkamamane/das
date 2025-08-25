@@ -17,6 +17,7 @@ export default function Login() {
     }
     if (role === 'receiver') navigate('/receiver-dashboard');
     else if (role === 'donor') navigate('/donor-dashboard');
+    else if (role === 'admin') navigate('/admin-dashboard');
     else alert('Invalid role');
   };
 
@@ -41,6 +42,7 @@ export default function Login() {
                 <option value="">--Choose Role--</option>
                 <option value="donor">Donor</option>
                 <option value="receiver">Receiver</option>
+                 <option value="admin">Admin</option>
               </select>
             </div>
             <div>
