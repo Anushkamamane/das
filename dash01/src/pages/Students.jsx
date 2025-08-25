@@ -14,14 +14,14 @@ export default function Students() {
   );
 
   return (
-    <div>
+    <div className="bg-white min-h-screen flex flex-col items-center justify-center">
       <h1 className="text-4xl font-bold text-center mb-6">Find a Student</h1>
       <input
         type="text"
         placeholder="Search by need..."
         value={search}
         onChange={(e) => setSearch(e.target.value)}
-        className="border p-3 w-full mb-6 rounded-xl shadow-md text-black"
+        className="border p-3 w-full md:w-2/3 mb-6 rounded-xl shadow-md text-black"
       />
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {filtered.length === 0 ? (

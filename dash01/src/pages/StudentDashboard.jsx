@@ -1,4 +1,5 @@
 import { BookOpen, DollarSign, Clock, CheckCircle } from 'lucide-react';
+import { useNavigate } from "react-router-dom";
 
 const applications = [
   { id: 1, title: "Laptop for Computer Science", amount: "$800", status: "Approved", date: "2025-01-15" },
@@ -14,6 +15,8 @@ const stats = [
 ];
 
 export default function StudentDashboard() {
+  const navigate = useNavigate();
+
   return (
     <div className="min-h-screen bg-gray-50">
       <div className="max-w-7xl mx-auto px-8 sm:px-6 lg:px-8 py-8 flex flex-col min-h-screen">
@@ -42,7 +45,7 @@ export default function StudentDashboard() {
         {/* Quick Actions */}
         <div className="bg-white rounded-xl shadow-md p-6 mb-8">
           <h2 className="text-xl font-semibold text-gray-900 mb-4">Quick Actions</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
             <button className="bg-emerald-600 hover:bg-emerald-700 text-white p-4 rounded-lg font-semibold transition-colors duration-200">
               Submit New Request
             </button>
@@ -52,10 +55,14 @@ export default function StudentDashboard() {
             <button className="bg-purple-600 hover:bg-purple-700 text-white p-4 rounded-lg font-semibold transition-colors duration-200">
               View Resources
             </button>
+            <button
+              className="bg-pink-600 hover:bg-pink-700 text-white p-4 rounded-lg font-semibold transition-colors duration-200"
+              onClick={() => navigate("/receiver-needs")}
+            >
+              Raise a Need
+            </button>
           </div>
         </div>
-
-        
 
         {/* Applications Table */}
         <div className="bg-white rounded-xl shadow-md overflow-hidden">
