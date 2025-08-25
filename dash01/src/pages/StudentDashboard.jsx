@@ -55,6 +55,8 @@ export default function StudentDashboard() {
           </div>
         </div>
 
+        
+
         {/* Applications Table */}
         <div className="bg-white rounded-xl shadow-md overflow-hidden">
           <div className="px-6 py-4 border-b border-gray-200">

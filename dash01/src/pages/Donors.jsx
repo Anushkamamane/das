@@ -1,35 +1,89 @@
-
 import React, { useState } from "react";
 
+const categories = {
+  Stationary: [
+    "Pen",
+    "Pencil",
+    "Books",
+    "Xth Books",
+    "Notebook",
+  ],
+  Clothing: [
+    "Bottomwear",
+    "Sweater",
+    "Footwear",
+  ],
+};
+
 export default function Donate() {
-  // Sample donor data (you can fetch this from your backend later)
+  // Sample donor data
   const [donors, setDonors] = useState([
     { name: "Shiva tekale", amount: 500 },
     { name: "Tanmay Kalikar", amount: 1000 },
   ]);
 
-  // Form state
+  // Form state for money donation
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [amount, setAmount] = useState("");
 
-  // Handle form submission
+  // Object donation state
+  const [objects, setObjects] = useState([
+    {
+      objectName: "School Bag",
+      photo: "https://wildcraft.com/media/catalog/product/1/_/1_2527.jpg?width=960",
+      category: "Stationary",
+      type: "Books",
+    },
+  ]);
+  const [objectName, setObjectName] = useState("");
+  const [objectPhoto, setObjectPhoto] = useState("");
+  const [objectCategory, setObjectCategory] = useState("");
+  const [objectType, setObjectType] = useState("");
+
+  // Handle money donation form submission
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!name || !email || !amount) {
       alert("Please fill out all fields!");
       return;
     }
-
-    // Add new donor to the list
     const newDonor = { name, amount: parseFloat(amount) };
     setDonors([...donors, newDonor]);
-
-    // Reset form
     setName("");
     setEmail("");
     setAmount("");
     alert("Thank you for your donation!");
+  };
+
+  // Handle object donation form submission
+  const handleObjectSubmit = (e) => {
+    e.preventDefault();
+    if (!objectName || !objectPhoto || !objectCategory || !objectType) {
+      alert("Please fill out all object fields!");
+      return;
+    }
+    setObjects([
+      ...objects,
+      { objectName, photo: objectPhoto, category: objectCategory, type: objectType },
+    ]);
+    setObjectName("");
+    setObjectPhoto("");
+    setObjectCategory("");
+    setObjectType("");
+    alert("Thank you for donating an object!");
+  };
+
+  // Handle image upload
+  const handleImageUpload = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setObjectPhoto(reader.result);
+      };
+      reader.readAsDataURL(file);
+    }
   };
 
   return (
@@ -81,6 +135,114 @@ export default function Donate() {
               <p className="text-gray-600">No donors yet. Be the first!</p>
             )}
           </div>
+        </div>
+
+        {/* Object Donation Section */}
+        <div className="mb-16">
+          <h3 className="text-2xl font-semibold mb-4 text-teal-700">
+            Donated Objects
+          </h3>
+          <div className="bg-white shadow-md rounded-xl p-4 mb-6">
+            {objects.length > 0 ? (
+              <ul className="space-y-2">
+                {objects.map((obj, idx) => (
+                  <li
+                    key={idx}
+                    className="flex items-center justify-between border-b pb-2 last:border-none"
+                  >
+                    <div className="flex items-center space-x-3">
+                      <img
+                        src={obj.photo}
+                        alt={obj.objectName}
+                        className="w-12 h-12 rounded object-cover"
+                      />
+                      <div>
+                        <span className="font-semibold">{obj.objectName}</span>
+                        <div className="text-xs text-gray-500">{obj.category} &gt; {obj.type}</div>
+                      </div>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <p className="text-gray-600">No objects donated yet.</p>
+            )}
+          </div>
+
+          {/* Object Donation Form */}
+          <h3 className="text-xl font-semibold mb-2 text-teal-700">
+            Donate an Object
+          </h3>
+          <form
+            onSubmit={handleObjectSubmit}
+            className="bg-white shadow-md rounded-xl p-6 space-y-4"
+          >
+            <div>
+              <label className="block mb-1 font-medium">Object Name</label>
+              <input
+                type="text"
+                className="w-full border rounded-lg p-2"
+                value={objectName}
+                onChange={(e) => setObjectName(e.target.value)}
+              />
+            </div>
+            <div>
+              <label className="block mb-1 font-medium">Photo (URL or Upload)</label>
+              <input
+                type="url"
+                className="w-full border rounded-lg p-2 mb-2"
+                placeholder="Paste image URL or upload below"
+                value={objectPhoto}
+                onChange={(e) => setObjectPhoto(e.target.value)}
+              />
+              <input
+                type="file"
+                accept="image/*"
+                className="w-full border rounded-lg p-2"
+                onChange={handleImageUpload}
+              />
+              {objectPhoto && (
+                <img src={objectPhoto} alt="Preview" className="mt-2 w-20 h-20 object-cover rounded" />
+              )}
+            </div>
+            <div>
+              <label className="block mb-1 font-medium">Category</label>
+              <select
+                className="w-full border rounded-lg p-2"
+                value={objectCategory}
+                onChange={(e) => {
+                  setObjectCategory(e.target.value);
+                  setObjectType(""); // Reset type when category changes
+                }}
+              >
+                <option value="">Select Category</option>
+                {Object.keys(categories).map((cat) => (
+                  <option key={cat} value={cat}>{cat}</option>
+                ))}
+              </select>
+            </div>
+            <div>
+              <label className="block mb-1 font-medium">Donation Type</label>
+              <select
+                className="w-full border rounded-lg p-2"
+                value={objectType}
+                onChange={(e) => setObjectType(e.target.value)}
+                disabled={!objectCategory}
+              >
+                <option value="">Select Type</option>
+                {objectCategory &&
+                  categories[objectCategory].map((type) => (
+                    <option key={type} value={type}>{type}</option>
+                  ))}
+              </select>
+            </div>
+            <button
+              type="submit"
+              className="w-full bg-teal-700 text-white py-2 rounded-lg hover:bg-teal-800 transition"
+            >
+              Donate Object
+            </button>
+          </form>
         </div>
 
         {/* Donation Form */}
