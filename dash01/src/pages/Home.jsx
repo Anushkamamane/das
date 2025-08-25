@@ -46,7 +46,7 @@ export default function Home() {
         </div>
         <div className="flex-1 flex justify-center md:justify-end mt-12 md:mt-0">
           <img
-            src="https://katalystindia.org/wp-content/uploads/2022/08/Our-Story-Banner.jpg"
+            src="https://imgs.search.brave.com/t_3J116Tla_Gn14x7MflsOkO-DB-6ZFsxQc6C_WsZvk/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/aW5kaWFpc3VzLmNv/bS9Eb2N1bWVudC9O/R08vMDlhMzNlOWU2/MC5qcGc"
             alt="Students"
             className="w-full max-w-md rounded-3xl shadow-2xl"
           />

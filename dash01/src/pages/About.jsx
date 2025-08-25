@@ -6,10 +6,10 @@ export default function About() {
     <div className="min-h-screen bg-gray-50 text-gray-800">
       <section className="max-w-5xl mx-auto px-6 py-16">
         <h1 className="text-4xl font-bold text-center mb-6 text-blue-600">
-          About Katalyst
+          About Seva Sahayog
         </h1>
         <p className="text-lg text-center max-w-3xl mx-auto mb-12">
-          Katalyst is a forward-thinking initiative that sparks meaningful
+          Seva Sahayog is a forward-thinking initiative that sparks meaningful
           change through innovation, education, and collaboration. We believe
           that small actions can create big transformations, and our mission is
           to empower individuals and communities to unlock their full potential.

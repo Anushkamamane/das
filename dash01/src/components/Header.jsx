@@ -6,7 +6,6 @@ export default function Header() {
         <ul className="flex gap-6">
           <li><a href="/" className=" text-white hover:text-amber-300 transition-colors">Home</a></li>
           <li><a href="/about" className=" text-white hover:text-amber-300 transition-colors">About</a></li>
-          <li><a href="/students" className=" text-white hover:text-amber-300 transition-colors">Students</a></li>
           <li><a href="/donate" className=" text-white hover:text-amber-300 transition-colors">Donate</a></li>
           <li><a href="/contact" className=" text-white hover:text-amber-300 transition-colors">Contact</a></li>
           <li><a href="/login" className=" text-white hover:text-amber-300 transition-colors">Login/Register</a></li>
