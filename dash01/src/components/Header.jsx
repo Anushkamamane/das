@@ -1,17 +1,21 @@
+import { Link } from "react-router-dom";
+
 export default function Header() {
   return (
-    <header className="fixed top-0 left-0 w-full z-50 bg-teal-700 text-white shadow-md px-8 py-4 flex justify-between items-center font-poppins">
-      <div className="font-bold text-2xl text-amber-400">DonorConnect</div>
-      <nav>
-        <ul className="flex gap-6">
-          <li><a href="/" className=" text-white hover:text-amber-300 transition-colors">Home</a></li>
-          <li><a href="/about" className=" text-white hover:text-amber-300 transition-colors">About</a></li>
-          <li><a href="/donate" className=" text-white hover:text-amber-300 transition-colors">Donate</a></li>
-          <li><a href="/contact" className=" text-white hover:text-amber-300 transition-colors">Contact</a></li>
-          <li><a href="/login" className=" text-white hover:text-amber-300 transition-colors">Login/Register</a></li>
-        </ul>
+    <header className="fixed top-0 left-0 w-full bg-gray-900 shadow-md z-50">
+      <nav className="flex justify-between items-center px-8 py-4">
+        <Link to="/" className="text-xl font-bold text-teal-400">
+          NGO Portal
+        </Link>
+        <div className="flex gap-6 text-white font-medium">
+           <Link to="/home" className="hover:text-teal-400">Home</Link>
+          <Link to="/about" className="hover:text-teal-400">About</Link>
+          <Link to="/students" className="hover:text-teal-400">Students</Link>
+          <Link to="/donors" className="hover:text-teal-400">Donors</Link>
+          <Link to="/donate" className="hover:text-teal-400">Donate</Link>
+          <Link to="/login" className="hover:text-teal-400">Login</Link>
+        </div>
       </nav>
     </header>
   );
 }
-

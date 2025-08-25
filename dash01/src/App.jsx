@@ -1,36 +1,39 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import MainLayout from "./layouts/MainLayout";
 
-// Pages
-import Home from './pages/Home';
-import ChooseLogin from './pages/ChooseLogin';
-import LoginForm from './pages/LoginForm';
-import AdminDashboard from './pages/AdminDashboard';
-import StudentDashboard from './pages/StudentDashboard';
-import UserDashboard from './pages/DonorDashboard';
-import About from './pages/About';
-import Donate from "./pages/Donate";
-// Header always visible
-import Header from './components/Header';
+// Pag
+import ChooseLogin from "./pages/ChooseLogin";
+import LoginForm from "./pages/LoginForm";
+import AdminDashboard from "./pages/AdminDashboard";
+import StudentDashboard from "./pages/StudentDashboard";
+import DonorDashboard from "./pages/DonorDashboard";
+import Students from "./pages/Students";
+import Donors from "./pages/Donors";
+import About from "./pages/About";
+import Donate from "./pages/Donors";
+import Home from "./pages/Home";
 
 export default function App() {
   return (
     <Router>
-      <Header />
-      {/* Add padding top to offset fixed header height */}
-      <div className="pt-20">
-        <Routes>
+      <Routes>
+        <Route element={<MainLayout />}>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<ChooseLogin />} />
           <Route path="/login/:role" element={<LoginForm />} />
-
           <Route path="/admin-dashboard" element={<AdminDashboard />} />
           <Route path="/student-dashboard" element={<StudentDashboard />} />
-          <Route path="/user-dashboard" element={<UserDashboard />} />
+          <Route path="/donor-dashboard" element={<DonorDashboard />} />
+          <Route path="/students" element={<Students />} />
+          <Route path="/donors" element={<Donors />} />
           <Route path="/about" element={<About />} />
           <Route path="/donate" element={<Donate />} />
-        </Routes>
-      </div>
+          <Route
+            path="*"
+            element={<h1 className="text-center text-2xl mt-20">404 - Page Not Found</h1>}
+          />
+        </Route>
+      </Routes>
     </Router>
   );
 }
